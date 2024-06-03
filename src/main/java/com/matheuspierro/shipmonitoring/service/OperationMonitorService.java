@@ -1,5 +1,6 @@
 package com.matheuspierro.shipmonitoring.service;
 
+import com.matheuspierro.shipmonitoring.exception.ServiceException;
 import com.matheuspierro.shipmonitoring.model.OperationMonitor;
 import com.matheuspierro.shipmonitoring.repository.OperationMonitorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,10 +14,18 @@ public class OperationMonitorService {
     private OperationMonitorRepository operationMonitorRepository;
 
     public List<OperationMonitor> getAllMetrics() {
-        return operationMonitorRepository.findAll();
+        try {
+            return operationMonitorRepository.findAll();
+        } catch (Exception e) {
+            throw new ServiceException("Error fetching all metrics", e);
+        }
     }
 
     public OperationMonitor saveMetric(OperationMonitor metric) {
-        return operationMonitorRepository.save(metric);
+        try {
+            return operationMonitorRepository.save(metric);
+        } catch (Exception e) {
+            throw new ServiceException("Error saving metric", e);
+        }
     }
 }

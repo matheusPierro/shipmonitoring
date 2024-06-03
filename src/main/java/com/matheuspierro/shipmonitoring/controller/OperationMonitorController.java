@@ -2,6 +2,7 @@ package com.matheuspierro.shipmonitoring.controller;
 
 import com.matheuspierro.shipmonitoring.model.OperationMonitor;
 import com.matheuspierro.shipmonitoring.service.OperationMonitorService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,7 +20,7 @@ public class OperationMonitorController {
     }
 
     @PostMapping
-    public OperationMonitor saveMetric(@RequestBody OperationMonitor metric) {
+    public OperationMonitor saveMetric(@Valid @RequestBody OperationMonitor metric) {
         return operationMonitorService.saveMetric(metric);
     }
 }

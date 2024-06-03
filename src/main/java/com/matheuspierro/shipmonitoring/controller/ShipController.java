@@ -2,6 +2,7 @@ package com.matheuspierro.shipmonitoring.controller;
 
 import com.matheuspierro.shipmonitoring.model.Ship;
 import com.matheuspierro.shipmonitoring.service.ShipService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,7 +20,7 @@ public class ShipController {
     }
 
     @PostMapping
-    public Ship saveShip(@RequestBody Ship ship) {
+    public Ship saveShip(@Valid @RequestBody Ship ship) {
         return shipService.saveShip(ship);
     }
 }

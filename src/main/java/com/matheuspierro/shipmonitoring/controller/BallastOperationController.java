@@ -2,6 +2,7 @@ package com.matheuspierro.shipmonitoring.controller;
 
 import com.matheuspierro.shipmonitoring.model.BallastOperation;
 import com.matheuspierro.shipmonitoring.service.BallastOperationService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,7 +20,7 @@ public class BallastOperationController {
     }
 
     @PostMapping
-    public BallastOperation saveOperation(@RequestBody BallastOperation operation) {
+    public BallastOperation saveOperation(@Valid @RequestBody BallastOperation operation) {
         return ballastOperationService.saveOperation(operation);
     }
 }
