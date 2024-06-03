@@ -1,0 +1,45 @@
+spring:
+  application:
+    name: shipmonitoring
+  datasource:
+    url: jdbc:oracle:thin:@oracle.fiap.com.br:1521:ORCL
+    username: rm96920
+    password: 080903
+    driver-class-name: oracle.jdbc.OracleDriver
+
+  # MySql Configs
+  # datasource:
+  #   url: jdbc:mysql://localhost:3306/shipdb
+  #   username: root
+  #   password: root
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+      dialect: org.hibernate.dialect.Oracle12cDialect
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+server:
+  port: 8081
+
+external:
+  api:
+    url: http://localhost:8080/api/movements
+    username: rm96920
+    password: 080903
+
+management:
+  endpoints:
+    enabled-by-default: false
+    web:
+      exposure:
+        include: "health, prometheus"
+  endpoint:
+    health:
+      enabled: true
+      show-details: always
+    prometheus:
+      enabled: true
