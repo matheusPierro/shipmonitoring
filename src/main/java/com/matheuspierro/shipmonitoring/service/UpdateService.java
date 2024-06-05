@@ -66,7 +66,7 @@ public class UpdateService {
             BallastOperation operation = new BallastOperation();
             operation.setShip(ship);
             operation.setLocation(location);
-            operation.setOperationType(movement.operationType());
+            operation.setOperationType(movement.movementType());
             operation.setOperationTimestamp(movement.timestamp());
             operation.setWaterAmount(movement.waterAmount());
             try {

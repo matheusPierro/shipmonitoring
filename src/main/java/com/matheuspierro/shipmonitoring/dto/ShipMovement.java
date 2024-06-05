@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
 public record ShipMovement(
         Long shipId,
         String shipName,
-        String operationType,
+        String movementType,
         LocalDateTime timestamp,
         BigDecimal latitude,
         BigDecimal longitude,

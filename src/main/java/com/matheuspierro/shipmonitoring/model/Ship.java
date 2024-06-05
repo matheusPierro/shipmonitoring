@@ -18,10 +18,8 @@ public class Ship {
     @NotBlank(message = "Name Ship cannot be blank")
     private String name;
 
-    @NotBlank(message = "Ship Type cannot be blank")
     private String shipType;
 
-    @Min(value = 0, message = "Ballast Capacity must be at least 0")
     private BigDecimal ballastCapacity;
 
     public Ship() {
