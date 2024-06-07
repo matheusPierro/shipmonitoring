@@ -27,7 +27,7 @@ server:
 
 external:
   api:
-    url: http://localhost:8080/api/movements
+    url: https://external-api-clean-boarding.azurewebsites.net/api/movements
     username: rm96920
     password: 080903
 
